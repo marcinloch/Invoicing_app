@@ -1,0 +1,75 @@
+<div id="container">
+  <div class="table-responsive-sm">
+    <table class="table">
+      <tr>
+        <th scope="row" class="thead">Name:</th>
+        <td class="inputText"><input [(ngModel)]="name" type="text" class="form-control" name="textCompany"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="thead">NIP:</th>
+        <td class="inputText"><input [(ngModel)]="nip" type="text" class="form-control" name="textCompany"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="thead">REGON:</th>
+        <td class="inputText"><input [(ngModel)]="regon" type="text" class="form-control" name="textCompany"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="thead">Locality:</th>
+        <td class="inputText"><input [(ngModel)]="locality" type="text" class="form-control" name="textCompany"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="thead">Street:</th>
+        <td class="inputText"><input [(ngModel)]="street" type="text" class="form-control" name="textCompany"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="thead">House number:</th>
+        <td class="inputText"><input [(ngModel)]="houseNumber" type="text" class="form-control" name="textCompany"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="thead">Postcode:</th>
+        <td class="inputText"><input [(ngModel)]="postcode" type="text" class="form-control" name="textCompany"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="thead">Additional:</th>
+        <td class="inputText"><input [(ngModel)]="additional" type="text" class="form-control" name="textCompany"></td>
+      </tr>
+    </table>
+    <div class="consumerAdd">
+      <button (click)="addConsumer()" type="button" class="btn btn-primary">
+        add position
+        <i class="fa fa-plus"></i>
+      </button>
+    </div>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nazwa</th>
+          <th scope="col">NIP</th>
+          <th scope="col">REGON</th>
+          <th scope="col">Locality</th>
+          <th scope="col">Street</th>
+          <th scope="col">House number</th>
+          <th scope="col">Postcode</th>
+          <th scope="col">Additional</th>
+        </tr>
+      </thead>
+        <tr *ngFor="let con of consumers">
+          <td>{{con.name}}</td>
+          <td>{{con.nip}}</td>
+          <td>{{con.regon}}</td>
+          <td>{{con.locality}}</td>
+          <td>{{con.street}}</td>
+          <td>{{con.houseNumber}}</td>
+          <td>{{con.postcode}}</td>
+          <td>{{con.additional}}</td>
+          <td>
+              <button (click)=removePosition(con)>
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+        </tr>
+    </table>
+  </div>
+</div>
